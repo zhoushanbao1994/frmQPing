@@ -31,8 +31,8 @@ void QPingThread::slot_executePingComman()
     // 执行指令
     QProcess cmd;
     cmd.start(cmdstr);
-    cmd.waitForReadyRead(1000);
-    cmd.waitForFinished(1000);
+    cmd.waitForReadyRead(m_timerout*1.2);
+    cmd.waitForFinished(m_timerout*1.2);
 
     // 获取结果
     QString response = cmd.readAll();
